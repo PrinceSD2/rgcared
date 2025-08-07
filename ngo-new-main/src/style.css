@@ -1,0 +1,46 @@
+/* Modern Donate Section Styles */
+.donate-section-modern {
+  padding: 60px 0;
+}
+.amount-btn-modern.active,
+.amount-btn-modern:hover {
+  background: #2e26b2 !important;
+  color: #fff !important;
+  border-color: #2e26b2 !important;
+}
+.theme-btn-modern {
+  background: linear-gradient(90deg, #2e26b2 0%, #1c3252 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 36px;
+  font-weight: 700;
+  font-size: 20px;
+  width: 100%;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background 0.2s;
+}
+.addAmount-value-modern {
+  border: 2px solid #2e26b2;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 18px;
+  width: 120px;
+}
+@media (max-width: 991px) {
+  .donate-section-modern .container {
+    padding: 20px !important;
+  }
+  .donate-section-modern .row {
+    flex-direction: column;
+  }
+}
+p {
+  color: red;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,14 @@
+.logo {
+  display: block;
+  /* max-width: 170px; */
+  max-width: 130px;
+}
+@media (max-width: 767px) {
+  .logo {
+    text-align: center;
+    margin: auto;
+  }
+}
+.logo a {
+  display: inline-block;
+}/*# sourceMappingURL=style.css.map */

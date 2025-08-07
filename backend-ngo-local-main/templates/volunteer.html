@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Message from User</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .header {
+        background-color: #2e26b2;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+      .content {
+        padding: 20px;
+        color: #333333;
+      }
+      .content p {
+        line-height: 1.6;
+        margin: 0 0 15px;
+      }
+      .content .label {
+        font-weight: bold;
+        color: black;
+      }
+      .footer {
+        background-color: #1c3252;
+        text-align: center;
+        padding: 10px 20px;
+        font-size: 12px;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>New Message from Your Reddington Global Care Foundation Website</h1>
+      </div>
+      <div class="content">
+        <p><span class="label">Name:</span> {{userName}}</p>
+        <p><span class="label">Email:</span> {{userEmail}}</p>
+        <p><span class="label">Subject:</span> {{subject}}</p>
+        <p><span class="label">Message:</span></p>
+        <p>{{message}}</p>
+      </div>
+      <div class="footer">
+        <p>This email was sent from the contact form on your website.</p>
+      </div>
+    </div>
+  </body>
+</html>
