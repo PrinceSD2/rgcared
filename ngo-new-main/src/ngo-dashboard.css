@@ -1,0 +1,94 @@
+/* Modern User Dashboard Styles for NGO */
+.ngo-dashboard-bg {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%);
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+}
+.ngo-dashboard-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(44,62,80,0.13);
+  padding: 32px 28px 28px 28px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 2;
+  transition: box-shadow 0.2s;
+}
+.ngo-dashboard-card:hover {
+  box-shadow: 0 12px 36px 0 rgba(44,62,80,0.18);
+}
+.ngo-dashboard-title {
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 800;
+  color: #2e26b2;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+.ngo-dashboard-section-title {
+  color: #1c3252;
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+.ngo-dashboard-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.ngo-dashboard-btn {
+  background: linear-gradient(90deg, #2e26b2 0%, #1c3252 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.ngo-dashboard-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.ngo-dashboard-table {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f8f9fa;
+  font-size: 0.98rem;
+}
+.ngo-dashboard-table th {
+  background: #2e26b2;
+  color: #fff;
+  font-weight: 600;
+}
+.ngo-dashboard-table td, .ngo-dashboard-table th {
+  padding: 8px 10px;
+  border: 1px solid #e0e0e0;
+}
+@media (max-width: 991px) {
+  .ngo-dashboard-bg {
+    padding: 10px;
+  }
+  .ngo-dashboard-card {
+    padding: 18px 8px 18px 8px;
+  }
+}
+@media (max-width: 767px) {
+  .ngo-dashboard-bg {
+    padding: 0;
+  }
+  .ngo-dashboard-card {
+    margin-bottom: 18px;
+    padding: 12px 2vw 12px 2vw;
+  }
+  .ngo-dashboard-title {
+    font-size: 1.3rem;
+  }
+}

@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom/client';
 import App from '../src/main-component/App/App';
 import reportWebVitals from './reportWebVitals';
 import { ParallaxProvider } from 'react-scroll-parallax';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/font-awesome.min.css';
 import './css/themify-icons.css';
 import './css/animate.css';
 import './css/flaticon_aidus.css';
 import './sass/style.scss';
+import './ngo-auth.css';
 
 
 import { PersistGate } from "redux-persist/integration/react";

@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { getUserFromToken } from '../../utils/user';
+import { removeToken, isLoggedIn } from '../../utils/auth';
 import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 import MobileMenu from '../MobileMenu/MobileMenu';
@@ -11,6 +13,23 @@ const HeaderS3 = props => {
   const ClickHandler = () => {
     window.scrollTo(10, 0);
   };
+  const [user, setUser] = useState(null);
+  const [dropdown, setDropdown] = useState(false);
+
+  useEffect(() => {
+    if (isLoggedIn()) {
+      setUser(getUserFromToken());
+    } else {
+      setUser(null);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    removeToken();
+    setUser(null);
+    window.location.replace('/');
+  };
+
   return (
     <header id="header" className="header-s3" style={props.style}>
       <HeaderTopbarS3 />
@@ -177,10 +196,36 @@ const HeaderS3 = props => {
                       Donate now
                     </Link>
                   </div>
-                  <div>
-                    <Link onClick={ClickHandler} className="theme-btn btn-outline-primary" to="/login" style={{marginLeft: 10, background: '#fff', color: '#2e26b2', border: '2px solid #2e26b2'}}>
-                      Login
-                    </Link>
+                  <div style={{position: 'relative'}}>
+                    {user ? (
+                      <div style={{display: 'flex', alignItems: 'center', gap: 8}}>
+                        <div
+                          className="theme-btn btn-outline-primary"
+                          style={{marginLeft: 10, background: '#fff', color: '#2e26b2', border: '2px solid #2e26b2', borderRadius: '50%', width: 44, height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 20, cursor: 'pointer', userSelect: 'none'}}
+                          onClick={() => setDropdown(d => !d)}
+                          title={user.name || user.email}
+                        >
+                          {user.name ? user.name.charAt(0).toUpperCase() : user.email.charAt(0).toUpperCase()}
+                        </div>
+                        {dropdown && (
+                          <div style={{position: 'absolute', right: 0, top: 50, background: '#fff', border: '1px solid #eee', borderRadius: 8, boxShadow: '0 2px 12px #2e26b230', minWidth: 160, zIndex: 1000}}>
+                            <div style={{padding: '10px 16px', fontWeight: 600, color: '#2e26b2', borderBottom: '1px solid #f0f0f0'}}>
+                              {user.name || user.email}
+                            </div>
+                            <a href="/dashboard" style={{display: 'block', padding: '10px 16px', color: '#222', textDecoration: 'none', borderBottom: '1px solid #f0f0f0'}}>
+                              Dashboard
+                            </a>
+                            <div onClick={handleLogout} style={{padding: '10px 16px', color: '#d32f2f', cursor: 'pointer', fontWeight: 500}}>
+                              Logout
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <Link onClick={ClickHandler} className="theme-btn btn-outline-primary" to="/login" style={{marginLeft: 10, background: '#fff', color: '#2e26b2', border: '2px solid #2e26b2'}}>
+                        Login
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>

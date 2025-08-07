@@ -1,0 +1,94 @@
+/* NGO Auth Page Modern Styles */
+.ngo-auth-bg {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #2e26b2 0%, #1c3252 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.ngo-auth-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(44,62,80,0.18);
+  padding: 40px 32px 32px 32px;
+  max-width: 420px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.7s cubic-bezier(.39,.575,.565,1) both;
+}
+.ngo-auth-logo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin: 0 auto 18px auto;
+  display: block;
+}
+.ngo-auth-title {
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 800;
+  color: #2e26b2;
+  text-align: center;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+.ngo-auth-subtext {
+  color: #1c3252;
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1.05rem;
+}
+.ngo-auth-input {
+  border-radius: 8px;
+  border: 1.5px solid #e0e0e0;
+  padding: 12px 14px;
+  font-size: 1rem;
+  margin-bottom: 18px;
+  width: 100%;
+  transition: border 0.2s;
+}
+.ngo-auth-input:focus {
+  border-color: #2e26b2;
+  outline: none;
+}
+.ngo-auth-btn {
+  background: linear-gradient(90deg, #2e26b2 0%, #1c3252 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  width: 100%;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.ngo-auth-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.ngo-auth-link {
+  color: #2e26b2;
+  text-decoration: underline;
+  font-weight: 600;
+  margin-left: 4px;
+}
+.ngo-auth-footer {
+  margin-top: 18px;
+  text-align: center;
+  color: #888;
+  font-size: 0.98rem;
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
