@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../api/auth';
 import { setToken } from '../utils/auth';
+import NavbarS3 from '../components/NavbarS3/NavbarS3';
+import Logo from '../images/logo.png';
 import '../ngo-auth.css';
+
 
 
 const Login = () => {
@@ -39,12 +42,14 @@ const Login = () => {
   };
 
   return (
-    <div className="ngo-auth-bg" style={{backgroundImage: 'url(/images/image-gallery/image-3.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh'}}>
-      <div className="ngo-auth-card" style={{boxShadow: '0 8px 32px 0 rgba(44,62,80,0.25)', background: 'rgba(255,255,255,0.97)'}}>
-        <img src="/favicon-old.png" alt="NGO Logo" className="ngo-auth-logo" style={{boxShadow: '0 2px 12px #2e26b2a0', borderRadius: '50%'}} />
-        <div className="ngo-auth-title" style={{fontSize: '2rem', letterSpacing: '2px'}}>Welcome Back!</div>
-        <div className="ngo-auth-subtext" style={{fontWeight: 500, color: '#1c3252', fontSize: '1.1rem'}}>Login to your account to support our mission</div>
-        <form onSubmit={handleSubmit} autoComplete="on">
+    <>
+      <NavbarS3 hclass={'wpo-site-header'} Logo={Logo} />
+      <div className="ngo-auth-bg" style={{backgroundImage: 'url(/images/image-gallery/image-3.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh', paddingTop: '120px'}}>
+        <div className="ngo-auth-card" style={{boxShadow: '0 8px 32px 0 rgba(44,62,80,0.25)', background: 'rgba(255,255,255,0.97)'}}>
+          <img src="/favicon-old.png" alt="NGO Logo" className="ngo-auth-logo" style={{boxShadow: '0 2px 12px #2e26b2a0', borderRadius: '50%'}} />
+          <div className="ngo-auth-title" style={{fontSize: '2rem', letterSpacing: '2px'}}>Welcome Back!</div>
+          <div className="ngo-auth-subtext" style={{fontWeight: 500, color: '#1c3252', fontSize: '1.1rem'}}>Login to your account to support our mission</div>
+          <form onSubmit={handleSubmit} autoComplete="on">
           <input
             type="email"
             className="ngo-auth-input"
@@ -85,6 +90,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+      </>
   );
 };
 

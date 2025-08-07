@@ -9,7 +9,9 @@ import { removeFromCart } from '../../store/actions/action';
 import HeaderTopbarS3 from '../HeaderTopbarS3/HeaderTopbarS3';
 
 const HeaderS3 = props => {
-  const [isSubMenuVisible, setSubMenuVisible] = useState(true);
+  const [isSubMenuVisible, setSubMenuVisible] = useState(false);
+  const [isImpactMenuVisible, setImpactMenuVisible] = useState(false);
+  const [isGetInvolvedMenuVisible, setGetInvolvedMenuVisible] = useState(false);
   const ClickHandler = () => {
     window.scrollTo(10, 0);
   };
@@ -58,12 +60,12 @@ const HeaderS3 = props => {
                         Home
                       </Link>
                     </li>
-                    <li>
-                      <Link to="/about-us" onClick={() => setSubMenuVisible(true)}>
+                    <li className="menu-item-has-children">
+                      <Link to="/about-us" onMouseEnter={() => setSubMenuVisible(true)} onMouseLeave={() => setSubMenuVisible(false)}>
                         About Us
                       </Link>
                       {isSubMenuVisible && (
-                        <ul className="sub-menu">
+                        <ul className="sub-menu" onMouseEnter={() => setSubMenuVisible(true)} onMouseLeave={() => setSubMenuVisible(false)}>
                           <li>
                             <ScrollLink to="about-us" smooth={true} duration={500} onClick={() => setSubMenuVisible(false)} offset={-150}>
                               About Us
@@ -132,28 +134,31 @@ const HeaderS3 = props => {
                       )}
                     </li>
 
-                    <li>
-                      <Link onClick={ClickHandler} to="/impact/success-stories">
+                    <li className="menu-item-has-children">
+                      <Link onClick={ClickHandler} onMouseEnter={() => setImpactMenuVisible(true)} onMouseLeave={() => setImpactMenuVisible(false)} to="/impact/success-stories">
                         Impact
                       </Link>
-                      <ul className="sub-menu">
-                        <li>
-                          <Link onClick={ClickHandler} to="/impact/success-stories">
-                            Success Stories
-                          </Link>
-                        </li>
-                        <li>
-                          <Link onClick={ClickHandler} to="/impact/gallery">
-                            Photo/Video Gallery
-                          </Link>
-                        </li>
-                      </ul>
+                      {isImpactMenuVisible && (
+                        <ul className="sub-menu" onMouseEnter={() => setImpactMenuVisible(true)} onMouseLeave={() => setImpactMenuVisible(false)}>
+                          <li>
+                            <Link onClick={ClickHandler} to="/impact/success-stories">
+                              Success Stories
+                            </Link>
+                          </li>
+                          <li>
+                            <Link onClick={ClickHandler} to="/impact/gallery">
+                              Photo/Video Gallery
+                            </Link>
+                          </li>
+                        </ul>
+                      )}
                     </li>
-                    <li>
-                      <Link onClick={ClickHandler} to="/get-involved/become-volunteer">
+                    <li className="menu-item-has-children">
+                      <Link onClick={ClickHandler} onMouseEnter={() => setGetInvolvedMenuVisible(true)} onMouseLeave={() => setGetInvolvedMenuVisible(false)} to="/get-involved/become-volunteer">
                         Get Involved
                       </Link>
-                      <ul className="sub-menu">
+                      {isGetInvolvedMenuVisible && (
+                        <ul className="sub-menu" onMouseEnter={() => setGetInvolvedMenuVisible(true)} onMouseLeave={() => setGetInvolvedMenuVisible(false)}>
                         <li>
                           <Link onClick={ClickHandler} to="/get-involved/become-volunteer">
                             Volunteer Opportunities or Join Our team
@@ -175,6 +180,7 @@ const HeaderS3 = props => {
                           </Link>
                         </li>
                       </ul>
+                      )}
                     </li>
                     <li>
                       <Link onClick={ClickHandler} to="/donate">
